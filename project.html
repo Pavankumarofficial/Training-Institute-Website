@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>project</title>
+        <style>
+            .topbar{
+                background-color:rgb(234, 181, 9);
+                height:30px;
+                text-align:center;
+                padding-top: 1px;
+                padding-bottom: 13px;
+                width:100%;
+            }
+            .topbar-content{
+                display:inline-block;
+                position:relative;
+                animation:head-content 25s infinite;
+            }
+            @keyframes head-content{
+                0%{
+                    left:0%;
+                }
+                50%{
+                    left:-25%;
+                }
+                100%{
+                    left:0%;
+                }
+            }
+            .middlebar{
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: rgb(4, 4, 88);
+                color:white;
+                margin-top: 5px;
+            }
+            .email:hover,.contact-mid:hover{
+                color:red;
+            }
+            .icons{
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            i{
+                padding-left: 30px;
+                padding-top: 20px;
+            }
+            .bottombar{
+                display: grid;
+                grid-template-columns: 300px 1fr 350px;
+                background-color: rgba(121, 157, 228, 0.371); 
+                padding-top: 12px;
+            }
+
+            .main1{             
+                padding-left: 10px;               
+                display: flex;
+                flex:200px;
+                flex-direction: row;
+                margin-right: 0px;
+            }
+            .main2{
+                flex:1;
+                display: flex;
+                justify-content: space-between;
+                font-size: 24px;
+                padding-right: 100px;
+                padding-left: 50px;
+                height: 80px;
+                margin-bottom: 20px;
+            }
+            .courses {
+                position: relative;
+                cursor: pointer;
+            }
+
+            .sub-courses {
+                display: none;
+                position: absolute;
+                top: 60px; 
+                left: 0;
+                padding-left:0px;  
+                padding-top: 0px;
+                padding-right: 0px;
+                background-color: white; 
+                color:black;
+                z-index: 1000; 
+            }
+            .courses:hover .sub-courses {
+               display: block;
+            }
+            .contact:hover{
+                color:red;
+                background-color: white;
+                padding-left: 0px;
+                padding-right: 8px;; 
+            }
+            .home:hover,.about:hover,.courses:hover,.training:hover{
+                color:red;
+                background-color: white;
+                padding-right: 20px;
+                padding-left: 20px;
+                padding-bottom:0px;
+                margin-bottom: 0px;
+                cursor: pointer;
+            }
+            .program:hover{
+                background-color: black;
+                color:white;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            
+            }
+            .formicons{
+                display:flex;
+                background-color:  rgb(44, 44, 219);
+                margin-left: 15px;
+                margin-right: 15px;
+                margin-bottom: 20px;
+             }
+             .enquiry-button{
+                margin-left: 50px;;
+                margin-right: 100px;
+                margin-top: 15px;
+                margin-bottom:10px ;
+                background-color:rgb(26, 162, 128) ;
+                color:white;
+                border:none;
+                border-radius:4px;
+                padding:10px;
+                cursor: pointer;
+            }
+            .container {
+            position: relative;
+            display: inline-block;
+            
+            }
+            .formtable {
+                position: absolute;
+                top:125px; 
+                left: -80px;
+                background-color: yellowgreen;
+                padding: 50px;
+                border-radius: 8px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                display: none;
+                width: 250px;
+                z-index: 1000;
+            }
+
+            .container:hover .formtable,
+            .formtable:hover {
+                display: block;
+            }
+            .container:focus-within .formtable {
+            display: block;
+            }
+            .formtable input, .formtable button {
+                width: 100%;
+                padding: 8px;
+                margin: 5px ;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+            }
+
+            .submit {
+                background-color: rgb(44, 44, 219);
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+            .submit:hover {
+                background-color: darkblue;
+            }
+            .image{
+                background-image: url(https://images.pexels.com/photos/6578426/pexels-photo-6578426.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+                width:100%;
+                background-size: cover;
+                height:560px;
+                position:relative;
+                animation-name: example;
+                animation-duration: 5s;
+                
+                
+            }
+            @keyframes example {
+                25% {background-image:url(https://th.bing.com/th/id/OIP.WVg6wM13AdACS_KAVHGsZwHaEK?w=311&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7);}
+                50% {background-image: url(https://th.bing.com/th/id/OIP.gAxJCiZ_1HcRr2cLPDQxvAHaE8?w=280&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7);}
+                100%{background-image: url(https://ts1.mm.bing.net/th?id=OIP.OXsJ-O11-u0kikat7VNdiAHaEN&pid=15.1);}
+            }
+            .rj-info{
+                width:600px;
+                margin-left: 100px;
+                color:white;
+                position:absolute;
+                top:300px;
+                
+            }
+            .apply-button {
+                position: relative;
+                cursor: pointer;
+                color: white;
+                background-color: rgba(13, 165, 142, 0.847);
+                padding: 10px 15px;
+                border: none;
+                border-radius: 3px;
+            }
+            .apply-button:hover{
+                color:red;
+            }
+            .query-section {
+                position: absolute;
+                display: none;
+                background: white;
+                padding: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                width: 250px;
+                left:150px;
+                top:-150px;
+                color: grey;
+                text-align: center;
+            }
+
+            .form {
+                width: 100%;
+                padding: 8px;
+                border: none;
+                border-bottom: 1px solid #ccc;
+                outline: none;
+            }
+
+            .quick-enquiry {
+                position: relative;
+                display: inline-block;
+            }
+
+            .quick-enquiry:hover .query-section {
+                display: block;
+            }
+
+            .submit-button {
+                background-color: blue;
+                color: white;
+                padding: 10px;
+                border-radius: 2px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .submit-button:hover {
+                background-color: darkblue;
+            }
+            .quick-enquiry:focus-within .query-section{
+                display: block;
+            }
+            .box1{
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                column-gap: 30px;
+                margin-left: 30px;
+                margin-top: 100px;
+            }
+            .sub-box{
+                background-color: rgb(18, 190, 133);
+                text-align: center;  
+                padding-left: 20px; 
+                padding-right: 20px;
+                padding-bottom: 20px;
+                border-radius: 10px;        
+            }
+            .sub-box:hover{
+                background-color: white;
+                box-shadow: 2px 2px 10px grey ;
+            }
+            .box-icons{              
+                margin-left: 120px;
+                height:80px;
+                width:80px;
+                border-radius:40px;
+                padding-left:0px;
+                padding-bottom: 0px;
+                margin-top: -30px;
+                background-color: #ccc;     
+            }
+            .course-container{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin-left: 40px;
+                column-gap: 50px;
+                row-gap: 30px;
+                margin-right: 40px;
+            }
+            .course-box{
+                box-shadow: 1px 1px 10px gray;
+                text-align: center;
+                height:350px;
+            }
+            .course-name{
+                background-color:rgb(18, 190, 133) ;
+                margin-top: 0px;          
+                padding: 15px;
+                color: white;
+            }
+            .apply-course-button:hover{
+                color:red;
+            }
+            ul {
+                list-style-type: none; 
+                margin: 0;
+                padding:0;
+           }
+           .footer{
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                background-color:rgb(190, 225, 238);
+                margin-top: 60px;
+           }
+           .footer-box{
+                margin-left: 30px;
+                margin-right: 20px;
+           }
+           .footer-icons{
+                width:40px;
+                background-color:rgb(18, 190, 133);
+                height:40px;
+                border-radius: 4px;
+                margin-top: 20px;
+                margin-left: 10px;
+           }
+            </style>
+    </head>
+    <body>
+        <script src="https://kit.fontawesome.com/073f66530f.js" crossorigin="anonymous"></script>
+        <div class="topbar">
+            <div class="topbar-content">
+                <p>Our best offer Ever!! Summer special - Get 3 Coursees at 22499/- omly.<a href="">Read more</a></p>
+            </div>
+        </div>
+
+
+        <div class="middlebar">
+            <p style="padding-left: 50px; " class="email">Email:rjtechnology@gmail.com</p>
+            <p class="contact-mid">Contact : +91 9025741101</p>
+            <div class="icons">
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"
+                    style="color:white;"></i></a>
+                <a href="https://x.com/?lang=en-in&mx=2"><i class="fa-brands fa-square-twitter"  style="color:white;"></i></a>
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"  style="color:white;"></i></a>
+                <a href="https://www.bing.com/search?filters=ufn%3a%22LinkedIn%22+sid%3a%22401e29b7-e564-7d0a-69dd-4aeff23c198d%22&qs=MB&pq=link&sk=CSYN1UAS7LC4AS8LS1&sc=24-4&pglt=299&q=linkedin&cvid=59ab044e2ebb4906b66475944f1bc077&gs_lcrp=EgRlZGdlKgcIABAuGPkHMgcIABAuGPkHMgYIARAuGEAyBggCEEUYOTIGCAMQABhAMgYIBBAuGEAyBggFEAAYQDIGCAYQLhhAMgYIBxAuGEAyBggIEAUYQNIBCDQzNjBqMGoxqAIAsAIA&FORM=ANNTA1&PC=LCTS"><i class="fa-brands fa-linkedin" style="color:white;"></i></a>
+            </div>
+        </div>
+
+
+
+        <div class="bottombar">
+            <main class="main1">
+                <i style="
+                color: rgb(52, 143, 180);" class="fa-solid fa-graduation-cap"></i>
+                <h2 style="
+                color: rgb(52, 143, 180);
+                padding-left: 10px;
+                ">RJ Technology</h2>
+            </main>
+
+            <main class="main2">
+            <div class="home"><p>Home</p></div>
+            <div class="about"><p>About</p></div>
+            <div class="courses">
+                <p >Courses</p>
+                <div class="sub-courses">
+                    <p class="program">Frontend</p>
+                    <p class="program">Backend</p>
+                </div>
+            </div>
+            <div class="training"><p>Online Training</p></div>
+            <div class="contact"> <p style="
+            padding: 2px 9px;
+            cursor: pointer;
+            ">Contact</p></div>
+            </main>
+
+            <div class="container">
+                <button class="enquiry-button">Enquiry</button>
+                <div class="formtable">
+                    <h4 style="text-align:center; font-size: 18px;">Request for Training Quotation</h4>
+                    <div style="
+                        background-color: blue;
+                        padding-bottom: 10px;
+                        font-size: 22px;
+                        margin-left: 0px;
+                        width:280px;
+                        height:38px;
+                        border-radius: 4px;                    
+                    ">
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                        <i class="fa-solid fa-laptop"></i>
+                        Online
+                    </div><br>
+                    <input type="text" placeholder="Enter Your Name">
+                    <input type="email" placeholder="Enter Your Email">
+                    <input type="number" placeholder="Enter Your Mobile No.">
+                    <input list="courseList" id="courses" name="courses" placeholder="Select Course">
+                    <datalist id="courseList">
+                        <option value="HTML">
+                        <option value="CSS">
+                        <option value="JavaScript">
+                        <option value="ReactJS">
+                    </datalist>
+                    <button class="submit">Submit Query</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="image">     
+        </div>
+
+
+        <div class="rj-info">
+            <h1>RJ Technologies</h1>
+            <p>Best Online & Classroom Training Institute</p><br>
+            <p>Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development to fill empty spaces in a layout that does not yet have content.
+                "Lorem ipsum" is a pseudo-Latin text used as a placeholder in design mockups and typesetting to help visualize the layout of a document without relying on meaningful content. 
+            </p><br><br>
+            <div class="quick-enquiry">
+                <button class="apply-button">Apply Online</button>
+                <form class="query-section">
+                    <h4>Quick Enquiry</h4>
+                    <input type="text" placeholder="Name*" class="form"><br><br>
+                    <input type="number" placeholder="10 Digit Mobile No*" class="form"><br><br>
+                    <input type="email" placeholder="Email" class="form"><br><br>
+                    <textarea rows="3" class="form" placeholder="Your Query"></textarea><br><br>
+                    <button class="submit-button">I'm Interested, Tell Me More</button>
+                </form>
+            </div>
+        </div>
+        
+        <div style="
+            text-align: center;
+            padding-top:20px;
+            padding-left: 100px;
+            padding-right: 100px;
+        ">
+            <h2>Key Features</h2>
+            <p style="color:grey">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse eligendi quia libero hic excepturi maxime. Omnis quibusdam iusto aut accusantium mollitia maxime dolores dicta facere sit? Omnis, enim incidunt. Magni!</p>
+        </div>
+
+        <div class="box1">
+            <div class="sub-box">
+                <div  class="box-icons">
+                    <i style="
+                    padding-left: 5px;
+                    padding-top: 30px;
+                    " 
+                    class="fa-regular fa-file-word"></i>
+                </div>
+                <h4>Expert Faculty</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex perspiciatis autem expedita fugit incidunt, dolorum, aliquid officia unde doloremque ea, quia tempora inventore ullam velit accusantium accusamus eveniet fuga eos.</p>
+            </div>
+            <div class="sub-box">
+                <div class="box-icons">
+                    <i style="
+                        padding-left: 5px;
+                        padding-top: 30px;
+                        " class="fa-duotone fa-regular fa-clock"></i>
+                </div>
+                <h4>Well Equiped Labs</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex perspiciatis autem expedita fugit incidunt, dolorum, aliquid officia unde doloremque ea, quia tempora inventore ullam velit accusantium accusamus eveniet fuga eos.</p>
+            </div>
+            <div class="sub-box">
+                <div class="box-icons">
+                    <i style="
+                    padding-left: 5px;
+                    padding-top: 30px;
+                    " 
+                     class="fa-sharp fa-solid fa-building-columns"></i>
+                </div>
+                <h4>Well Equiped Labs</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex perspiciatis autem expedita fugit incidunt, dolorum, aliquid officia unde doloremque ea, quia tempora inventore ullam velit accusantium accusamus eveniet fuga eos.</p>
+            </div>
+            <div class="sub-box">
+                <div class="box-icons">
+                    <i style="
+                    padding-left: 5px;
+                    padding-top: 30px;
+                    " 
+                    class="fa-solid fa-phone"></i>
+                </div>
+                <h4>Well Equiped Labs</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex perspiciatis autem expedita fugit incidunt, dolorum, aliquid officia unde doloremque ea, quia tempora inventore ullam velit accusantium accusamus eveniet fuga eos.</p>
+            </div>
+        </div>
+
+
+        <div style="
+            text-align: center;
+            padding-top:20px;
+            padding-left: 100px;
+            padding-right: 100px;
+        ">
+            <h2>Our Courses</h2>
+            <p style="color: gray;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius voluptas rem doloribus placeat ut, odio labore, autem fugiat nisi dolor distinctio iure nemo veritatis id quibusdam error dicta eligendi. Necessitatibus.</p>
+        </div><br><br>
+
+
+        <div class="course-container"> 
+            <div class="course-box"> 
+                <h2 class="course-name">Full Stack Development</h2>
+                <h3>Cars ultricies lacus consectetur,consectur</h3>
+                <i style="
+                    color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, ab aspernatur. Repellendus dolorem sint rerum recusandae, mollitia eaque doloremque blanditiis laudantium temporibus? Veniam in, voluptatum laboriosam deserunt eveniet ullam fugiat.</p><br>
+                <button class="apply-course-button" style="
+                    background-color:rgb(18, 190, 133); 
+                    padding:12px ;
+                    border-radius: 2px;
+                    border: none;
+                "><a href="http://127.0.0.1:5500/apply.html">Apply Online</a></button>
+            </div>
+            <div class="course-box">
+                <h2 class="course-name">Frontened Development</h2>
+                <h3>Cars ultricies lacus consectetur,consectur</h3>
+                <i style="
+                    color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, ab aspernatur. Repellendus dolorem sint rerum recusandae, mollitia eaque doloremque blanditiis laudantium temporibus? Veniam in, voluptatum laboriosam deserunt eveniet ullam fugiat.</p><br>
+                <button class="apply-course-button"  style="
+                background-color:rgb(18, 190, 133); 
+                padding:12px ;
+                border-radius: 2px;
+                border: none;
+                "><a href="http://127.0.0.1:5500/apply.html">Apply Online</a></button>
+            </div>
+            <div class="course-box">
+                <h2 class="course-name">Back  Development</h2>
+                <h3>Cars ultricies lacus consectetur,consectur</h3>
+                <i style="
+                    color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, ab aspernatur. Repellendus dolorem sint rerum recusandae, mollitia eaque doloremque blanditiis laudantium temporibus? Veniam in, voluptatum laboriosam deserunt eveniet ullam fugiat.</p><br>
+                <button class="apply-course-button" style="
+                background-color:rgb(18, 190, 133); 
+                padding:12px ;
+                border-radius: 2px;
+                border: none;
+                "><a href="http://127.0.0.1:5500/apply.html">Apply Online</a></button>
+            </div >
+            <div class="course-box">
+                <h2 class="course-name">Data Science</h2>
+                <h3>Cars ultricies lacus consectetur,consectur</h3>
+                <i style="
+                    color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, ab aspernatur. Repellendus dolorem sint rerum recusandae, mollitia eaque doloremque blanditiis laudantium temporibus? Veniam in, voluptatum laboriosam deserunt eveniet ullam fugiat.</p><br>
+                <button class="apply-course-button" style="
+                background-color:rgb(18, 190, 133); 
+                padding:12px ;
+                border-radius: 2px;
+                border: none;
+                "><a href="http://127.0.0.1:5500/apply.html">Apply Online</a></button>
+            </div>
+            <div class="course-box">
+                <h2 class="course-name">AWS</h2>
+                <h3>Cars ultricies lacus consectetur,consectur</h3>
+                <i style="
+                    color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, ab aspernatur. Repellendus dolorem sint rerum recusandae, mollitia eaque doloremque blanditiis laudantium temporibus? Veniam in, voluptatum laboriosam deserunt eveniet ullam fugiat.</p><br>
+                <button class="apply-course-button" style="
+                background-color:rgb(18, 190, 133); 
+                padding:12px ;
+                border-radius: 2px;
+                border: none;
+                "><a href="http://127.0.0.1:5500/apply.html">Apply Online</a></button>
+            </div>
+            <div class="course-box">
+                <h2 class="course-name">Devops</h2>
+                <h3>Cars ultricies lacus consectetur,consectur</h3>
+                <i style="
+                    color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <i style="
+                color:rgb(228, 228, 78);
+                " class="fa-solid fa-star"></i>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, ab aspernatur. Repellendus dolorem sint rerum recusandae, mollitia eaque doloremque blanditiis laudantium temporibus? Veniam in, voluptatum laboriosam deserunt eveniet ullam fugiat.</p><br>
+                <button class="apply-course-button" style="
+                background-color:rgb(18, 190, 133); 
+                padding:12px ;
+                border-radius: 2px;
+                border: none;
+                "><a href="http://127.0.0.1:5500/apply.html">Apply Online</a></button>
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+            <div class="footer-box">
+                <h2>RJ Technology</h2>
+                <p style="
+                color: rgb(154, 97, 97);">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae officia ex enim. Quisquam illum cumque similique perferendis assumenda? Earum qui, dolores ipsa saepe culpa omnis iure laudantium fuga excepturi unde!</p>
+            </div>
+
+            <div class="footer-box">
+                <h2>Our Services</h2>
+                <ul style="
+                color: rgb(154, 97, 97);">
+                    <li>Mobile Applications Design</li><br>
+                    <li>Web Applications Design</li><br>
+                    <li>website Design</li><br>
+                    <li>Web User Interface Design</li><br>
+                    <li>Web UX Design and Research</li><br>
+                    <li>Theame Development Design</li><br>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h2>Head Office</h2>
+                <p style="
+                color: rgb(154, 97, 97);">1/2, Marthahalli,Bengulru Karnataka-560037,
+                   Phone: +91 9025741101
+                   Email: rjtechnology@gmail.com
+                </p>
+                <p> <b>Office Time:</b> 10AM - 6PM </p>
+            </div>
+
+            <div class="footer-box">
+                <h2>Subscribe Us</h2>
+                <input style="
+                    padding: 8px;
+                " type="email" placeholder="Email">
+                <div style="display:inline;
+                    background-color: rgb(18, 190, 133);
+                    padding: 12px 2px;
+                    margin-left: 20px;
+                    border-radius: 6px;
+                    padding-right: 12px;
+                    ">
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" 
+                    style="color:black;
+                    margin-left:-14px;
+                    padding-top: 13px;"><i class="fa-brands fa-telegram"></i></a>
+                </div><br>
+                
+                <div style="
+                    display:grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    margin-right: 120px;
+                    margin-left: -15px;
+                ">
+                    <div class="footer-icons">
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"
+                            style="color:black;
+                            margin-left:-14px;
+                            padding-top: 13px;"></i></a>
+                    </div>
+                    <div class="footer-icons">
+                        <a href="https://x.com/?lang=en-in&mx=2"><i class="fa-brands fa-square-twitter"  style="color:black;
+                        margin-left:-14px;
+                        padding-top: 13px;"></i></a>             
+                    </div>
+                    <div class="footer-icons">
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"  style="color:black;margin-left:-14px;
+                        padding-top: 13px;"></i></a>
+                    </div>
+                    <div class="footer-icons">
+                        <a href="https://www.bing.com/search?filters=ufn%3a%22LinkedIn%22+sid%3a%22401e29b7-e564-7d0a-69dd-4aeff23c198d%22&qs=MB&pq=link&sk=CSYN1UAS7LC4AS8LS1&sc=24-4&pglt=299&q=linkedin&cvid=59ab044e2ebb4906b66475944f1bc077&gs_lcrp=EgRlZGdlKgcIABAuGPkHMgcIABAuGPkHMgYIARAuGEAyBggCEEUYOTIGCAMQABhAMgYIBBAuGEAyBggFEAAYQDIGCAYQLhhAMgYIBxAuGEAyBggIEAUYQNIBCDQzNjBqMGoxqAIAsAIA&FORM=ANNTA1&PC=LCTS"><i class="fa-brands fa-linkedin" style="color:black;
+                        margin-left:-14px;
+                        padding-top: 13px;"></i></a>           
+                    </div>
+                </div>
+            </div>
+        </div>
+        </body>
+</html>
